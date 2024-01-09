@@ -16,6 +16,8 @@
 package com.alibaba.csp.sentinel.dashboard.datasource.entity.rule;
 
 import com.alibaba.csp.sentinel.slots.system.SystemRule;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.fasterxml.jackson.databind.ser.std.ToStringSerializer;
 
 import java.util.Date;
 
@@ -70,6 +72,7 @@ public class SystemRuleEntity implements RuleEntity {
     }
 
     @Override
+    @JsonSerialize(using = ToStringSerializer.class)
     public Long getId() {
         return id;
     }
